@@ -72,8 +72,8 @@ const JoinCreateChat = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="p-8 w-full flex flex-col gap-5 max-w-md rounded dark:bg-gray-900">
+    <div className=" min-h-screen flex items-center justify-center bg-[url('./Images/background.jpeg')] bg-cover">
+      <div className="border border-gray-700 p-8 rounded-lg shadow-lg w-full flex flex-col gap-5 max-w-md rounded dark:bg-black/80">
         <h1 className="text-2xl font-semibold text-center"> Join Room / Create Room </h1>
         <div>
             <label htmlFor="name" className='block font-medium mb-2'>Your Name</label>

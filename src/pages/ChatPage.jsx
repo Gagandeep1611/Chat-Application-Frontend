@@ -102,8 +102,8 @@ const ChatPage = () => {
   },[])
 
   return (
-    <div>
-      <header className='dark:border-gray-700 shadow border w-full h-20 py-4 dark:bg-gray-900 flex justify-around items-center'>
+    <div className='bg-[url(./Images/chat-bg.png)] bg-cover'>
+      <header className='dark:border-gray-700 shadow w-full h-20 py-4 dark:bg-gray-900 flex justify-around items-center'>
         <div>
             <h1 className='text-xl font-semibold'>Room : <span>{roomId}</span></h1>
         </div>
@@ -120,7 +120,7 @@ const ChatPage = () => {
             <div key={index} className={`flex ${messages.sender===currentUser?"justify-end":"justify-start"}`}>
               <div
               className={`my-2 ${
-                message.sender === currentUser ? "bg-green-800" : "bg-gray-800"
+                message.sender === currentUser ? "bg-gray-800" : "bg-gray-500"
               } p-2 max-w-xs rounded`}
             >
               <div className='flex flex-row gap-20'>
@@ -137,12 +137,12 @@ const ChatPage = () => {
         }
       </main>
       <div className='fixed bottom-3 w-full h-16'>
-        <div className='h-full rounded items-center gap-4 justify-between flex px-7 w-2/3 mx-auto dark:bg-gray-900'>
+        <div className='h-full rounded items-center gap-4 justify-between flex px-7 w-2/3 mx-auto dark:bg-gray-900/60'>
             <input value={input} onChange={(e)=>setInput(e.target.value)} onKeyDown={(e) => {
               if (e.key === "Enter") {
                 sendMessage();
               }
-            }} type="text" placeholder="Type your message here..." className="dark:bg-gray-900 px-3 w-full py-2 rounded focus:ring-0" />
+            }} type="text" placeholder="Type your message here..." className="border dark:bg-gray-900 px-3 w-full py-2 rounded focus:ring-0" />
             <div className='flex gap-1'>
             <button className="dark:bg-purple-600 h-10 w-10 flex justify-center items-center rounded-full"><MdAttachFile size={20}/></button>
             <button onClick={sendMessage} className="dark:bg-green-600 h-10 w-17 flex justify-center items-center rounded-full"><MdSend size={20}/></button>
